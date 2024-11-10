@@ -31,7 +31,7 @@ def show_prediction():
         X = np.array([[age,rooms,brooms,population,households,income,oceanp]])
         X[:,6] = le_ocean.transform(X[:,6])
         X = X.astype(float)
-        X = scaler.transform(X)
+        
         
         price = regressor.predict(X)
         st.subheader(f"The predicted price of the property is ${price[0]:,.2f}")
